@@ -10,7 +10,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: lightgrey;
+  background-color: grey;
 }
 
 body {
@@ -52,7 +52,7 @@ header {
 }
 
 .card-body {
-  min-height: 100px;
+  min-height: 50px;
 }
 
 .card-footer {
@@ -89,6 +89,10 @@ header {
   cursor: pointer;
 }
 
+.numbercharacter {
+    width: 3rem;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -108,7 +112,6 @@ button[disabled] {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 10px;

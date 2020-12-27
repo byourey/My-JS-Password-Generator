@@ -31,6 +31,18 @@ return;
         alert("Please select atleast 1 character type")
         return;
     }
+
+    const rangeLength = document.getElementById("rangeLength")
+    const numberLength = document.getElementById("numberLength")
+
+    rangeLength.addEventListener('input', syncPasswordLength)
+    numberLength.addEventListener('input', syncPasswordLength)
+
+    function syncPasswordLength(e) {
+        const value = e.target.value
+        rangeLength.value = value
+        numberLength.value = value
+    }
     // Need an object to put the user input in 
 
 

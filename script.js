@@ -5,77 +5,86 @@ var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
 
 
 
-// Need to create a function to prompt user to select password length
-function selection() {    
-    var numberLength = prompt("How long would you want your password to be?");
-// Will have to check if numberLength is a number
-var numbers = ("8 to 128");
-if (numbers == false) {
-    alert("Please enter a number between 8 to 128");
-} else {
-    alert("Your good to go");
-}
+
+    var upperCasebox = document.getElementById("Uppercase");
+    var lowerCasebox = document.getElementById("Lowercase");
+    var numberBox = document.getElementById("Numbers");
+    var specialCharbox = document.getElementById("Specialcharacters");
+    const lengthEL = document.getElementById('passwordlength');
+    const generateEL = document.getElementById('generate');
 
 
-if (numberLength >=8 && numberLength <=128) {
-alert("Please choose a password between 8 and 128 characters long");
-return;
-}
-    alert("Tick all boxes below to start generating your password");
-    var upperCasebox = document.getElementById("box1");
-    var lowerCasebox = document.getElementById("box2");
-    var numberBox = document.getElementById("box3");
-    var specialCharbox = document.getElementById("box4");
-
-    if (upperCasebox === false && lowerCasebox === false && numberBox === false && specialCharbox === false) {
-        alert("Please select atleast 1 character type")
-        return;
-    }
-
-    const rangeLength = document.getElementById("rangeLength")
-    const numberLength = document.getElementById("numberLength")
-
-    rangeLength.addEventListener('input', syncPasswordLength)
-    numberLength.addEventListener('input', syncPasswordLength)
-
-    function syncPasswordLength(e) {
-        const value = e.target.value
-        rangeLength.value = value
-        numberLength.value = value
-    }
-    // Need an object to put the user input in 
 
 
-}
+     
+
 
 // Need a function to get a random element from an array for upperCase to specialCharacters
 function generaterandomupperCase() {
     var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V" ,"W", "X", "Y", "Z"]
 return upperCase[Math.floor(Math.random() * upperCase.length)]
 }
-console.log(generaterandomupperCase())
+// console.log(generaterandomupperCase())
 
 function generaterandomlowerCase() {
     var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"]
 return lowerCase[Math.floor(Math.random() * lowerCase.length)]
 }
-console.log(generaterandomlowerCase())
+// console.log(generaterandomlowerCase())
 
 function generaterandomnumbers() {
     var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     return numbers[Math.floor(Math.random() * numbers.length)]
 }
-console.log(generaterandomnumbers())
+// console.log(generaterandomnumbers())
 
 function generaterandomspecialCharacters() {
     var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
     return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
 }
-console.log(generaterandomspecialCharacters())
+// console.log(generaterandomspecialCharacters())
+
+generateEL.addEventListener("click", function () {
+var uppercasecheck = upperCasebox.checked;
+// console.log(uppercasecheck)
+var lowercasecheck = lowerCasebox.checked;
+// console.log(lowercasecheck)
+var numberscheck = numberBox.checked;
+// console.log(numberscheck)
+var specialcharacterscheck = specialCharbox.checked;
+// console.log(specialcharacterscheck)
+// var pwlength = +lengthEL.value;
+if (!uppercasecheck && !lowercasecheck && !numberscheck && !specialcharacterscheck) {
+    alert("Tick 1 of the boxes below");
+    return;
+}
+
+     // Need an object to put the user input in 
+
+    const randomFunc = {
+        lengthEL: lengthEL, 
+        upperCasebox: upperCasebox,  
+        lowerCasebox: lowerCasebox,
+        numberBox: numberBox,
+        specialCharbox: specialCharbox,    
+          
+     };
+     return randomFunc;
 
 
+});
 
-// Need a function to put the password together 
+function generatePassword() {
+    var gen = [];
+    gen.push(generaterandomupperCase()) 
+    gen.push(generaterandomlowerCase())
+    gen.push(generaterandomnumbers())
+    gen.push(generaterandomspecialCharacters())
+    console.log(gen);
+    // concantentate these 4 functions:
+    return gen;
+
+}
 
 
 
@@ -98,4 +107,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateEL.addEventListener("click", writePassword); {
+  
+// }
+writePassword();

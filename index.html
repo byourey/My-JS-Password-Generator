@@ -25,25 +25,25 @@
           <h2>Generate a Password</h2>
           <p>Let's get that new password now!</p>
         </div>
-        <br>
+        
 
         <!-- Selection Box Section -->
         <h3>Tick 1 of the boxes</h3>  
-        <form>
-            <input type="checkbox" id="box1" name="box1" value="Uppercase">
+        <form id="PasswordForm">
+            <input type="checkbox" id="Uppercase" name="Uppercase" value="Uppercase">
             <label for="box1"> Uppercase</label><br>
-            <input type="checkbox" id="box2" name="box2" value="Lowercase">
+            <input type="checkbox" id="Lowercase" name="Lowercase" value="Lowercase">
             <label for="box2"> Lowercase</label><br>
-            <input type="checkbox" id="box3" name="box3" value="Numbers">
+            <input type="checkbox" id="Numbers" name="Numbers" value="Numbers">
             <label for="box3"> Numbers</label><br>
-            <input type="checkbox" id="box4" name="box4" value="Special Characters">
+            <input type="checkbox" id="SpecialCharacters" name="Special Characters" value="Special Characters">
             <label for="box4"> Special Characters</label><br><br>            
           </form>
 
         <div class="numberLength">
-            <label for="numberlength">Choose Password Length</label>
-            <input type="range" min="8" max="128" value="8" id="rangeLength">
-            <input class ="numberCharacter" type="number" min="8" max="128" value ="8" id="numberLength">
+            <label for="numberlength"><b>Password Length:</label><br></b>
+            <p>Choose between 8 to 128 Characters</p>
+            <input type="number" min="8" max="128" value="8" id="passwordlength">
         </div>
 
 
@@ -53,7 +53,7 @@
           <textarea readonly id="password" placeholder="This is your password" aria-label="Generated Password"></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate</button>
+          <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>

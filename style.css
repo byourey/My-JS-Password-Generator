@@ -14,7 +14,7 @@ body,
 }
 
 body {
-  font-family: sans-serif;
+  font-family:'Times New Roman', Times, serif
   background-color: #f9fbfd;
 }
 
@@ -75,7 +75,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(8, 25, 175);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -89,7 +89,7 @@ header {
   cursor: pointer;
 }
 
-.numbercharacter {
+#Length {
     width: 3rem;
 }
 
@@ -116,7 +116,7 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dotted #c0c7cf;
   border-radius: 6px;
   resize: none;
   overflow: hidden;

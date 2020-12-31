@@ -15,9 +15,7 @@ body,
 
 body {
   font-family:'Times New Roman', Times, serif
-  background-color: #f9fbfd;
 }
-
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -89,7 +87,7 @@ header {
   cursor: pointer;
 }
 
-#Length {
+#passwordlength {
     width: 3rem;
 }
 

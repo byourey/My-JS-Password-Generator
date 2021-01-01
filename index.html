@@ -28,7 +28,7 @@
         
 
         <!-- Selection Box Section -->
-        <h3>Tick 1 of the boxes</h3>  
+        <h3>Tick 1 of the boxes:</h3>  
         <form id="PasswordForm">
             <input type="checkbox" id="Uppercase" name="Uppercase" value="Uppercase">
             <label for="box1"> Uppercase</label><br>
@@ -50,10 +50,12 @@
 
 
         <div class="card-body">
-          <textarea readonly id="password" placeholder="This is your password" aria-label="Generated Password"></textarea>
+          <div id="passwordarea" placeholder="This is your password" aria-label="Generated Password"></div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
+          <button id="copybutton" class="btn">Copy Password</button>
+
         </div>
       </div>
     </div>

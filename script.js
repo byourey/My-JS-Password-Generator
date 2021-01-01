@@ -1,46 +1,50 @@
 // Created an Array for the 4 boxes
 
-var upperCase = ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V" ,"W", "X", "Y", "Z"]
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"]
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
+var upperCase = "ABCDEFGHIJKLMNOPQRSUVWXYZ";
+var lowerCase = "abcdefghijklmnopqrstuvxyz";
+var numbers = "0123456789";
+var specialCharacters = "!@#$%^&*";
 
 
 
 
-    var upperCasebox = document.getElementById("Uppercase");
-    var lowerCasebox = document.getElementById("Lowercase");
-    var numberBox = document.getElementById("Numbers");
-    var specialCharbox = document.getElementById("SpecialCharacters");
-    var pwdLength = document.getElementById("passwordlength");
-    var generateEL = document.getElementById("generate");
+//  Created DOM Elements  
+
+// var pwdresults = document.getElementById("passwordarea");
+var upperCasebox = document.getElementById("Uppercase");
+var lowerCasebox = document.getElementById("Lowercase");
+var numberBox = document.getElementById("Numbers");
+var specialCharbox = document.getElementById("SpecialCharacters");
+var pwdLength = document.getElementById("passwordlength");
+var generateEL = document.getElementById("generate");
+var copyEL = document.getElementById("copybutton");
      
 
 
-// Need a function to get a random element from an array for upperCase to specialCharacters
-function generaterandomupperCase() {
-    var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V" ,"W", "X", "Y", "Z"]
-return upperCase[Math.floor(Math.random() * upperCase.length)]
-}
-// console.log(generaterandomupperCase())
+// // Created a function to get a random element from an array for upperCase to specialCharacters
+// function generaterandomupperCase() {
+//     var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V" ,"W", "X", "Y", "Z"]
+// return upperCase[Math.floor(Math.random() * upperCase.length)]
+// }
+// // console.log(generaterandomupperCase())
 
-function generaterandomlowerCase() {
-    var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"]
-return lowerCase[Math.floor(Math.random() * lowerCase.length)]
-}
-// console.log(generaterandomlowerCase())
+// function generaterandomlowerCase() {
+//     var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"]
+// return lowerCase[Math.floor(Math.random() * lowerCase.length)]
+// }
+// // console.log(generaterandomlowerCase())
 
-function generaterandomnumbers() {
-    var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    return numbers[Math.floor(Math.random() * numbers.length)]
-}
-// console.log(generaterandomnumbers())
+// function generaterandomnumbers() {
+//     var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+//     return numbers[Math.floor(Math.random() * numbers.length)]
+// }
+// // console.log(generaterandomnumbers())
 
-function generaterandomspecialCharacters() {
-    var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
-    return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-}
-// console.log(generaterandomspecialCharacters())
+// function generaterandomspecialCharacters() {
+//     var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
+//     return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+// }
+// // console.log(generaterandomspecialCharacters())
 
 
 generateEL.addEventListener("click", function() {
@@ -51,15 +55,12 @@ generateEL.addEventListener("click", function() {
     generatePassword()   
   }
 
-     // Need an object to put the user input in 
-
-    // 
-
 });
 
 function generatePassword() {
-    let password = "";
     var allcombo = "";
+    var password = "";
+    
 var upperCaseCheck = upperCasebox.checked;
 // console.log(uppercasecheck)
 var lowerCaseCheck = lowerCasebox.checked;
@@ -72,25 +73,45 @@ var passLengthval = pwdLength.value;
 // console.log(upperCaseCheck, lowerCaseCheck, numbersCheck, specialCharactersCheck, passLengthval);
 
 if(upperCaseCheck === true) {
-    password += generaterandomupperCase();
+    allcombo += upperCase;
 }
 if(lowerCaseCheck === true) {
-    password += generaterandomlowerCase();
+    allcombo += lowerCase;
 }
 if(numbersCheck === true) {    
-    password += generaterandomnumbers();
+    allcombo += numbers;
 }
 if(specialCharactersCheck === true) {
-    password += generaterandomspecialCharacters();
+    allcombo += specialCharacters;
 }
 
 
-for (i = 0; i<pwdLength; i++) {
-    password += allcombo(Math.floor(Math.random() * allcombo.length));
+for (i = 0; i<passLengthval; i++) {
+password += allcombo[Math.floor(Math.random() * allcombo.length)];
+}
+passwordarea.innerText = password;
 }
 
-console.log(password);
-}
+// Created a copy password to clipboard option
+
+copyEL.addEventListener("click", function() {
+var copytext = document.createElement("textarea");
+var holdpassword = passwordarea.innerText;
+    if(holdpassword === "") {
+    return;
+    }
+
+copytext.value = holdpassword;
+document.body.appendChild(copytext);
+copytext.select();
+document.execCommand("copy");
+copytext.remove();
+alert("Your password was just copied");
+});
+
+
+
+
 
 
 
@@ -102,6 +123,7 @@ console.log(password);
 //         specialCharbox: specialCharactersCheck,    
 //         };
 //      console.log(passwordFunction);
+
     // var gen = [];
     // gen.push(generaterandomupperCase(), generaterandomlowerCase(), generaterandomnumbers(), generaterandomspecialCharacters())
     // // console.log(gen);
@@ -111,20 +133,20 @@ console.log(password);
 
 
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
-
-// Add event listener to generate button
-// generateEL.addEventListener("click", writePassword); {
-  
 // }
-writePassword();
+
+// // Add event listener to generate button
+// // generateEL.addEventListener("click", writePassword); {
+  
+// // }
+// writePassword();

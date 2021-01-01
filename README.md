@@ -1,5 +1,6 @@
 # My-JS-Password-Generator
 * BJ's Password Generator
+
 <a href = "https://byourey.github.io/My-JS-Password-Generator/.">View my deployed application</a>
 
 ## Install

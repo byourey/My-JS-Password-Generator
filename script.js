@@ -10,7 +10,6 @@ var specialCharacters = "!@#$%^&*";
 
 //  Created DOM Elements  
 
-// var pwdresults = document.getElementById("passwordarea");
 var upperCasebox = document.getElementById("Uppercase");
 var lowerCasebox = document.getElementById("Lowercase");
 var numberBox = document.getElementById("Numbers");
@@ -106,7 +105,7 @@ document.body.appendChild(copytext);
 copytext.select();
 document.execCommand("copy");
 copytext.remove();
-alert("Your password was just copied");
+alert("Your password was copied");
 });
 
 

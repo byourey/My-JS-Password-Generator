@@ -6,8 +6,6 @@ var numbers = "0123456789";
 var specialCharacters = "!@#$%^&*";
 
 
-
-
 //  Created DOM Elements  
 
 var upperCasebox = document.getElementById("Uppercase");
@@ -45,9 +43,10 @@ var copyEL = document.getElementById("copybutton");
 // }
 // // console.log(generaterandomspecialCharacters())
 
-
+// Created a function when the button generate password is clicked
 generateEL.addEventListener("click", function() {
 
+    // Created an alert to the user if no box option is selected to go ahead and select one
    if (upperCasebox.checked === false && lowerCasebox.checked === false && numberBox.checked === false && specialCharbox.checked === false) {
     alert("Tick 1 of the boxes below");
    } else {
@@ -56,6 +55,7 @@ generateEL.addEventListener("click", function() {
 
 });
 
+// Created a function to generate the password
 function generatePassword() {
     var allcombo = "";
     var password = "";
@@ -71,6 +71,7 @@ var specialCharactersCheck = specialCharbox.checked;
 var passLengthval = pwdLength.value;
 // console.log(upperCaseCheck, lowerCaseCheck, numbersCheck, specialCharactersCheck, passLengthval);
 
+// Created IF Functions to check which box is checked and generate password accordingly
 if(upperCaseCheck === true) {
     allcombo += upperCase;
 }
@@ -84,7 +85,7 @@ if(specialCharactersCheck === true) {
     allcombo += specialCharacters;
 }
 
-
+// Created For Function to generate password according to password length chosen
 for (i = 0; i<passLengthval; i++) {
 password += allcombo[Math.floor(Math.random() * allcombo.length)];
 }

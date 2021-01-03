@@ -105,47 +105,4 @@ document.body.appendChild(copytext);
 copytext.select();
 document.execCommand("copy");
 copytext.remove();
-alert("Your password was copied");
 });
-
-
-
-
-
-
-
-// const passwordFunction = {
-//         pwdLength: passLengthval, 
-//         upperCasebox: upperCaseCheck,  
-//         lowerCasebox: lowerCaseCheck,
-//         numberBox: numbersCheck,
-//         specialCharbox: specialCharactersCheck,    
-//         };
-//      console.log(passwordFunction);
-
-    // var gen = [];
-    // gen.push(generaterandomupperCase(), generaterandomlowerCase(), generaterandomnumbers(), generaterandomspecialCharacters())
-    // // console.log(gen);
-    // // concantentate these 4 functions:
-    // return gen;
-
-
-
-// Assignment Code
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// // generateEL.addEventListener("click", writePassword); {
-  
-// // }
-// writePassword();

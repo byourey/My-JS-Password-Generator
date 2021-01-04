@@ -18,31 +18,6 @@ var copyEL = document.getElementById("copybutton");
      
 
 
-// // Created a function to get a random element from an array for upperCase to specialCharacters
-// function generaterandomupperCase() {
-//     var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V" ,"W", "X", "Y", "Z"]
-// return upperCase[Math.floor(Math.random() * upperCase.length)]
-// }
-// // console.log(generaterandomupperCase())
-
-// function generaterandomlowerCase() {
-//     var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"]
-// return lowerCase[Math.floor(Math.random() * lowerCase.length)]
-// }
-// // console.log(generaterandomlowerCase())
-
-// function generaterandomnumbers() {
-//     var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-//     return numbers[Math.floor(Math.random() * numbers.length)]
-// }
-// // console.log(generaterandomnumbers())
-
-// function generaterandomspecialCharacters() {
-//     var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
-//     return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-// }
-// // console.log(generaterandomspecialCharacters())
-
 // Created a function when the button generate password is clicked
 generateEL.addEventListener("click", function() {
 
@@ -85,7 +60,7 @@ if(specialCharactersCheck === true) {
     allcombo += specialCharacters;
 }
 
-// Created For Function to generate password according to password length chosen
+// Created For Function for generate password
 for (i = 0; i<passLengthval; i++) {
 password += allcombo[Math.floor(Math.random() * allcombo.length)];
 }
